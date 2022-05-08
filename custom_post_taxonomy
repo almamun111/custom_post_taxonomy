@@ -1,0 +1,19 @@
+	function ppm_quickstart_custom_post_taxonomy(){
+		register_taxonomy(
+			'teacher_cat',
+			'teacher',
+			array(
+				'hierarchical'		=> true,
+				'label'				=> __('ক্যাটাগরি','asian-theme'),
+				'query_var'			=> true,
+				'show_admin_column' => true,
+				'rewrite'			=> array(
+					'slug'			=> 'teacher-category',
+					'with_front' 	=> true
+				)			
+			)
+
+		);
+
+	}
+	add_action('init','ppm_quickstart_custom_post_taxonomy');
